@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autobazar Network</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: #000 url('background.jpg') center/cover no-repeat fixed;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px 16px;
+        }
+        .overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.65);
+            backdrop-filter: blur(4px);
+            z-index: 1;
+        }
+        .container {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+        .header h1 {
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+        }
+        .header p {
+            font-size: 14px;
+            color: #ccc;
+            margin-bottom: 28px;
+        }
+        
+        .accordion-btn {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 16px 20px;
+            margin-top: 12px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 14px;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+        .accordion-btn i.main-icon { font-size: 20px; width: 28px; text-align: left; }
+        .accordion-btn i.arrow-icon { font-size: 14px; transition: transform 0.3s ease; }
+        .accordion-btn.active i.arrow-icon { transform: rotate(180deg); }
+        
+        .panel {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            padding: 0 10px;
+        }
+        
+        .sub-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 14px;
+            margin-top: 8px;
+            background: rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            color: #24a1de;
+            font-size: 15px;
+            font-weight: 600;
+            text-decoration: none;
+            backdrop-filter: blur(5px);
+        }
+        .sub-link.instagram { color: #e1306c; }
+        .sub-link.tiktok { color: #00f2fe; }
+        .sub-link.threads { color: #ffffff; }
+
+        .btn-direct {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 16px 20px;
+            margin-top: 12px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 14px;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            backdrop-filter: blur(10px);
+        }
+        .btn-direct i.main-icon { font-size: 20px; width: 28px; text-align: left; }
+    </style>
+</head>
+<body>
+
+    <div class="overlay"></div>
+
+    <div class="container">
+        <div class="header">
+            <h1>AUTOBAZAR</h1>
+            <p>Автомобильная сеть №1</p>
+        </div>
+
+        <!-- TELEGRAM ACCORDION -->
+        <button class="accordion-btn">
+            <span><i class="fa-brands fa-telegram main-icon" style="color:#24a1de;"></i> Telegram Каналы</span>
+            <i class="fa-solid fa-chevron-down arrow-icon"></i>
+        </button>
+        <div class="panel">
+            <a href="tg://resolve?domain=autobazar_uaa1" class="sub-link">Основной Telegram</a>
+            <a href="tg://resolve?domain=autobazar_uukrainee" class="sub-link">Второй Telegram</a>
+            <a href="tg://resolve?domain=kartell_auto" class="sub-link">Kartell Auto</a>
+        </div>
+
+        <!-- TIKTOK ACCORDION -->
+        <button class="accordion-btn">
+            <span><i class="fa-brands fa-tiktok main-icon" style="color:#00f2fe;"></i> TikTok Профили</span>
+            <i class="fa-solid fa-chevron-down arrow-icon"></i>
+        </button>
+        <div class="panel">
+            <a href="snssdk1128://user/profile/autobazar_ukraine" class="sub-link tiktok">Основной TikTok</a>
+            <a href="snssdk1128://user/profile/autobazar_ukrainian" class="sub-link tiktok">Второй TikTok</a>
+        </div>
+
+        <!-- INSTAGRAM ACCORDION -->
+        <button class="accordion-btn">
+            <span><i class="fa-brands fa-instagram main-icon" style="color:#e1306c;"></i> Instagram Страницы</span>
+            <i class="fa-solid fa-chevron-down arrow-icon"></i>
+        </button>
+        <div class="panel">
+            <a href="instagram://user?username=avtobazar.ukrainian" class="sub-link instagram">Первый Instagram</a>
+            <a href="instagram://user?username=carsale.ukrainian" class="sub-link instagram">Второй Instagram</a>
+        </div>
+
+        <!-- THREADS DIRECT BUTTON -->
+        <a href="barcelona://user?username=autobazar_ua1" class="btn-direct">
+            <span><i class="fa-brands fa-threads main-icon"></i> Threads</span>
+            <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:14px; opacity:0.6;"></i>
+        </a>
+    </div>
+
+    <script>
+        const acc = document.getElementsByClassName("accordion-btn");
+        for (let i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                const panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            });
+        }
+    </script>
+</body>
+</html>
