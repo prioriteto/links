@@ -1,22 +1,22 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Autobazar Network</title>
+    <title>AUTOBAZAR UKRAINE</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background: #000 url('background.jpg') center/cover no-repeat fixed;
+            background: #000 url('background.jpg') center top / cover no-repeat fixed;
             color: #ffffff;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             min-height: 100vh;
-            padding: 20px 16px;
+            padding: 24px 16px;
         }
         .overlay {
             position: fixed;
@@ -33,7 +33,7 @@
             text-align: center;
         }
         .header h1 {
-            font-size: 24px;
+            font-size: 22px;
             font-weight: 800;
             letter-spacing: 1px;
             text-transform: uppercase;
@@ -71,7 +71,7 @@
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s ease-out;
-            padding: 0 10px;
+            padding: 0 4px;
         }
         
         .sub-link {
@@ -89,10 +89,10 @@
             font-weight: 600;
             text-decoration: none;
             backdrop-filter: blur(5px);
+            cursor: pointer;
         }
         .sub-link.instagram { color: #e1306c; }
         .sub-link.tiktok { color: #00f2fe; }
-        .sub-link.threads { color: #ffffff; }
 
         .btn-direct {
             display: flex;
@@ -109,6 +109,7 @@
             font-weight: 600;
             text-decoration: none;
             backdrop-filter: blur(10px);
+            cursor: pointer;
         }
         .btn-direct i.main-icon { font-size: 20px; width: 28px; text-align: left; }
     </style>
@@ -119,49 +120,50 @@
 
     <div class="container">
         <div class="header">
-            <h1>AUTOBAZAR</h1>
-            <p>Автомобильная сеть №1</p>
+            <h1>AUTOBAZAR UKRAINE</h1>
+            <p>список наших соцмереж</p>
         </div>
 
-        <!-- TELEGRAM ACCORDION -->
+        <!-- TELEGRAM -->
         <button class="accordion-btn">
-            <span><i class="fa-brands fa-telegram main-icon" style="color:#24a1de;"></i> Telegram Каналы</span>
+            <span><i class="fa-brands fa-telegram main-icon" style="color:#24a1de;"></i> TELEGRAM</span>
             <i class="fa-solid fa-chevron-down arrow-icon"></i>
         </button>
         <div class="panel">
-            <a href="tg://resolve?domain=autobazar_uaa1" class="sub-link">Основной Telegram</a>
-            <a href="tg://resolve?domain=autobazar_uukrainee" class="sub-link">Второй Telegram</a>
-            <a href="tg://resolve?domain=kartell_auto" class="sub-link">Kartell Auto</a>
+            <div class="sub-link" onclick="openApp('tg://resolve?domain=autobazar_uaa1', 'https://t.me/autobazar_uaa1')">Основний Телеграм</div>
+            <div class="sub-link" onclick="openApp('tg://resolve?domain=autobazar_uukrainee', 'https://t.me/autobazar_uukrainee')">Телеграм 2</div>
+            <div class="sub-link" onclick="openApp('tg://resolve?domain=kartell_auto', 'https://t.me/kartell_auto')">Телеграм 3</div>
         </div>
 
-        <!-- TIKTOK ACCORDION -->
+        <!-- TIKTOK -->
         <button class="accordion-btn">
-            <span><i class="fa-brands fa-tiktok main-icon" style="color:#00f2fe;"></i> TikTok Профили</span>
+            <span><i class="fa-brands fa-tiktok main-icon" style="color:#00f2fe;"></i> TIKTOK</span>
             <i class="fa-solid fa-chevron-down arrow-icon"></i>
         </button>
         <div class="panel">
-            <a href="snssdk1128://user/profile/autobazar_ukraine" class="sub-link tiktok">Основной TikTok</a>
-            <a href="snssdk1128://user/profile/autobazar_ukrainian" class="sub-link tiktok">Второй TikTok</a>
+            <div class="sub-link tiktok" onclick="openApp('snssdk1128://user/profile/autobazar_ukraine', 'https://www.tiktok.com/@autobazar_ukraine')">Основний ТікТок</div>
+            <div class="sub-link tiktok" onclick="openApp('snssdk1128://user/profile/autobazar_ukrainian', 'https://www.tiktok.com/@autobazar_ukrainian')">ТікТок 2</div>
         </div>
 
-        <!-- INSTAGRAM ACCORDION -->
+        <!-- INSTAGRAM -->
         <button class="accordion-btn">
-            <span><i class="fa-brands fa-instagram main-icon" style="color:#e1306c;"></i> Instagram Страницы</span>
+            <span><i class="fa-brands fa-instagram main-icon" style="color:#e1306c;"></i> INSTAGRAM</span>
             <i class="fa-solid fa-chevron-down arrow-icon"></i>
         </button>
         <div class="panel">
-            <a href="instagram://user?username=avtobazar.ukrainian" class="sub-link instagram">Первый Instagram</a>
-            <a href="instagram://user?username=carsale.ukrainian" class="sub-link instagram">Второй Instagram</a>
+            <div class="sub-link instagram" onclick="openApp('instagram://user?username=avtobazar.ukrainian', 'https://www.instagram.com/avtobazar.ukrainian')">Основний Інстаграм</div>
+            <div class="sub-link instagram" onclick="openApp('instagram://user?username=carsale.ukrainian', 'https://www.instagram.com/carsale.ukrainian')">Інстаграм 2</div>
         </div>
 
-        <!-- THREADS DIRECT BUTTON -->
-        <a href="barcelona://user?username=autobazar_ua1" class="btn-direct">
-            <span><i class="fa-brands fa-threads main-icon"></i> Threads</span>
+        <!-- THREADS -->
+        <div class="btn-direct" onclick="openApp('barcelona://user?username=autobazar_ua1', 'https://www.threads.net/@autobazar_ua1')">
+            <span><i class="fa-brands fa-threads main-icon"></i> THREADS</span>
             <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:14px; opacity:0.6;"></i>
-        </a>
+        </div>
     </div>
 
     <script>
+        // Раскрытие аккордеонов
         const acc = document.getElementsByClassName("accordion-btn");
         for (let i = 0; i < acc.length; i++) {
             acc[i].addEventListener("click", function() {
@@ -173,6 +175,17 @@
                     panel.style.maxHeight = panel.scrollHeight + "px";
                 }
             });
+        }
+
+        // Переход в приложение с фолбэком на веб-ссылку
+        function openApp(appUrl, webUrl) {
+            let now = Date.now();
+            window.location.href = appUrl;
+            setTimeout(function() {
+                if (Date.now() - now < 1500) {
+                    window.location.href = webUrl;
+                }
+            }, 1000);
         }
     </script>
 </body>
